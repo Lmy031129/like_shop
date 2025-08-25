@@ -1,16 +1,20 @@
 package router
 
 import (
+	"api-gatware/handler/api"
+
 	"github.com/gin-gonic/gin"
-	"net/http"
-	"time"
 )
 
 func Router() *gin.Engine {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		time.Sleep(5 * time.Second)
-		c.String(http.StatusOK, "Welcome Gin Server")
-	})
+	user := r.Group("/user")
+	{
+		user.POST("/register", api.Register)
+		user.POST("/login", api.Login)
+		user.POST("/userShow", api.UserShow)
+
+	}
+
 	return r
 }

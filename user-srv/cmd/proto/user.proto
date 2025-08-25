@@ -13,7 +13,29 @@ message RegisterReq {
 message RegisterResp {
   int64 Id =1;
 }
+message LoginReq {
+  string mobile   =1;
+  string password =2;
+  string email    =3;
+}
+
+message LoginResp {
+  int64 Id =1;
+}
+message UserShowReq {
+  string mobile   =1;
+
+}
+
+message UserShowResp {
+  int64   Id      =1;
+  string password =2;
+  string email    =3;
+  string mobile   =4;
+}
 
 service User {
-  rpc Register(RegisterReq) returns (RegisterResp);
+  rpc Register(RegisterReq) returns (RegisterResp);   //注册接口
+  rpc Login(LoginReq) returns (LoginResp);            //登录接口
+  rpc UserShow(UserShowReq) returns (UserShowResp);   //详情接口
 }
