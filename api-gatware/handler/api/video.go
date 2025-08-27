@@ -4,6 +4,7 @@ import (
 	"api-gatware/cmd/globar"
 	__ "api-gatware/cmd/proto"
 	"api-gatware/handler/request"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -19,7 +20,7 @@ func Videoadd(c *gin.Context) {
 		})
 		return
 	}
-	videoadd, err := globar.Clients.Videoadd(c, &__.VideoaddReq{
+	videoAdd, err := globar.Clients.Videoadd(c, &__.VideoaddReq{
 		Userid:   int64(c.GetUint("userId")),
 		Title:    req.Title,
 		VideoUrl: req.VideoUrl,
@@ -37,7 +38,7 @@ func Videoadd(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"code":    http.StatusOK,
 		"message": "添加成功",
-		"data":    videoadd,
+		"data":    videoAdd,
 	})
 	return
 
@@ -53,7 +54,7 @@ func Videoupdate(c *gin.Context) {
 		})
 		return
 	}
-	videoupdate, err := globar.Clients.Videoupdate(c, &__.VideoupdateReq{
+	videoUpdate, err := globar.Clients.Videoupdate(c, &__.VideoupdateReq{
 		Id:     int64(req.ID),
 		Userid: int64(c.GetUint("userId")),
 	})
@@ -68,7 +69,7 @@ func Videoupdate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"code":    http.StatusOK,
 		"message": "修改成功",
-		"data":    videoupdate,
+		"data":    videoUpdate,
 	})
 	return
 }
@@ -83,7 +84,7 @@ func VideoDelete(c *gin.Context) {
 		})
 		return
 	}
-	videodelete, err := globar.Clients.Videodelete(c, &__.VideodeleteReq{
+	videoDelete, err := globar.Clients.Videodelete(c, &__.VideodeleteReq{
 		Id:     int64(req.ID),
 		Userid: int64(c.GetUint("userId")),
 	})
@@ -98,8 +99,9 @@ func VideoDelete(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"code":    http.StatusOK,
 		"message": "删除成功",
-		"data":    videodelete,
+		"data":    videoDelete,
 	})
+	return
 
 }
 
@@ -113,7 +115,7 @@ func VideoList(c *gin.Context) {
 		})
 		return
 	}
-	videolist, err := globar.Clients.Videolist(c, &__.VideolistReq{
+	videoList, err := globar.Clients.Videolist(c, &__.VideolistReq{
 		Page: req.Page,
 		Size: req.Size,
 	})
@@ -125,10 +127,11 @@ func VideoList(c *gin.Context) {
 		})
 		return
 	}
+	fmt.Println("算数", 1024*4)
 	c.JSON(http.StatusOK, gin.H{
 		"code":    http.StatusOK,
 		"message": "查看成功",
-		"data":    videolist,
+		"data":    videoList,
 	})
 	return
 }
