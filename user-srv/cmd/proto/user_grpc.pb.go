@@ -19,9 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	User_Register_FullMethodName = "/proto.User/Register"
-	User_Login_FullMethodName    = "/proto.User/Login"
-	User_UserShow_FullMethodName = "/proto.User/UserShow"
+	User_Register_FullMethodName    = "/proto.User/Register"
+	User_Login_FullMethodName       = "/proto.User/Login"
+	User_UserShow_FullMethodName    = "/proto.User/UserShow"
+	User_Videoadd_FullMethodName    = "/proto.User/Videoadd"
+	User_Videoupdate_FullMethodName = "/proto.User/Videoupdate"
+	User_Videodelete_FullMethodName = "/proto.User/Videodelete"
+	User_Videolist_FullMethodName   = "/proto.User/Videolist"
 )
 
 // UserClient is the client API for User service.
@@ -31,6 +35,10 @@ type UserClient interface {
 	Register(ctx context.Context, in *RegisterReq, opts ...grpc.CallOption) (*RegisterResp, error)
 	Login(ctx context.Context, in *LoginReq, opts ...grpc.CallOption) (*LoginResp, error)
 	UserShow(ctx context.Context, in *UserShowReq, opts ...grpc.CallOption) (*UserShowResp, error)
+	Videoadd(ctx context.Context, in *VideoaddReq, opts ...grpc.CallOption) (*VideoaddResp, error)
+	Videoupdate(ctx context.Context, in *VideoupdateReq, opts ...grpc.CallOption) (*VideoupdateResp, error)
+	Videodelete(ctx context.Context, in *VideodeleteReq, opts ...grpc.CallOption) (*VideodeleteResp, error)
+	Videolist(ctx context.Context, in *VideolistReq, opts ...grpc.CallOption) (*VideolistResp, error)
 }
 
 type userClient struct {
@@ -71,6 +79,46 @@ func (c *userClient) UserShow(ctx context.Context, in *UserShowReq, opts ...grpc
 	return out, nil
 }
 
+func (c *userClient) Videoadd(ctx context.Context, in *VideoaddReq, opts ...grpc.CallOption) (*VideoaddResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VideoaddResp)
+	err := c.cc.Invoke(ctx, User_Videoadd_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) Videoupdate(ctx context.Context, in *VideoupdateReq, opts ...grpc.CallOption) (*VideoupdateResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VideoupdateResp)
+	err := c.cc.Invoke(ctx, User_Videoupdate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) Videodelete(ctx context.Context, in *VideodeleteReq, opts ...grpc.CallOption) (*VideodeleteResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VideodeleteResp)
+	err := c.cc.Invoke(ctx, User_Videodelete_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) Videolist(ctx context.Context, in *VideolistReq, opts ...grpc.CallOption) (*VideolistResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VideolistResp)
+	err := c.cc.Invoke(ctx, User_Videolist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServer is the server API for User service.
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility.
@@ -78,6 +126,10 @@ type UserServer interface {
 	Register(context.Context, *RegisterReq) (*RegisterResp, error)
 	Login(context.Context, *LoginReq) (*LoginResp, error)
 	UserShow(context.Context, *UserShowReq) (*UserShowResp, error)
+	Videoadd(context.Context, *VideoaddReq) (*VideoaddResp, error)
+	Videoupdate(context.Context, *VideoupdateReq) (*VideoupdateResp, error)
+	Videodelete(context.Context, *VideodeleteReq) (*VideodeleteResp, error)
+	Videolist(context.Context, *VideolistReq) (*VideolistResp, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -96,6 +148,18 @@ func (UnimplementedUserServer) Login(context.Context, *LoginReq) (*LoginResp, er
 }
 func (UnimplementedUserServer) UserShow(context.Context, *UserShowReq) (*UserShowResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserShow not implemented")
+}
+func (UnimplementedUserServer) Videoadd(context.Context, *VideoaddReq) (*VideoaddResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Videoadd not implemented")
+}
+func (UnimplementedUserServer) Videoupdate(context.Context, *VideoupdateReq) (*VideoupdateResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Videoupdate not implemented")
+}
+func (UnimplementedUserServer) Videodelete(context.Context, *VideodeleteReq) (*VideodeleteResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Videodelete not implemented")
+}
+func (UnimplementedUserServer) Videolist(context.Context, *VideolistReq) (*VideolistResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Videolist not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 func (UnimplementedUserServer) testEmbeddedByValue()              {}
@@ -172,6 +236,78 @@ func _User_UserShow_Handler(srv interface{}, ctx context.Context, dec func(inter
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_Videoadd_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VideoaddReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Videoadd(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Videoadd_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Videoadd(ctx, req.(*VideoaddReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_Videoupdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VideoupdateReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Videoupdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Videoupdate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Videoupdate(ctx, req.(*VideoupdateReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_Videodelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VideodeleteReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Videodelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Videodelete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Videodelete(ctx, req.(*VideodeleteReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_Videolist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VideolistReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Videolist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Videolist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Videolist(ctx, req.(*VideolistReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // User_ServiceDesc is the grpc.ServiceDesc for User service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -190,6 +326,22 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UserShow",
 			Handler:    _User_UserShow_Handler,
+		},
+		{
+			MethodName: "Videoadd",
+			Handler:    _User_Videoadd_Handler,
+		},
+		{
+			MethodName: "Videoupdate",
+			Handler:    _User_Videoupdate_Handler,
+		},
+		{
+			MethodName: "Videodelete",
+			Handler:    _User_Videodelete_Handler,
+		},
+		{
+			MethodName: "Videolist",
+			Handler:    _User_Videolist_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

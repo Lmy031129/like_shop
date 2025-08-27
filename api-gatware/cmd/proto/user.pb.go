@@ -341,6 +341,490 @@ func (x *UserShowResp) GetMobile() string {
 	return ""
 }
 
+type VideoaddReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Userid        int64                  `protobuf:"varint,1,opt,name=userid,proto3" json:"userid,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	VideoUrl      string                 `protobuf:"bytes,3,opt,name=videoUrl,proto3" json:"videoUrl,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	ImageUrl      string                 `protobuf:"bytes,5,opt,name=imageUrl,proto3" json:"imageUrl,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideoaddReq) Reset() {
+	*x = VideoaddReq{}
+	mi := &file_user_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideoaddReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideoaddReq) ProtoMessage() {}
+
+func (x *VideoaddReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideoaddReq.ProtoReflect.Descriptor instead.
+func (*VideoaddReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *VideoaddReq) GetUserid() int64 {
+	if x != nil {
+		return x.Userid
+	}
+	return 0
+}
+
+func (x *VideoaddReq) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *VideoaddReq) GetVideoUrl() string {
+	if x != nil {
+		return x.VideoUrl
+	}
+	return ""
+}
+
+func (x *VideoaddReq) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *VideoaddReq) GetImageUrl() string {
+	if x != nil {
+		return x.ImageUrl
+	}
+	return ""
+}
+
+type VideoaddResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideoaddResp) Reset() {
+	*x = VideoaddResp{}
+	mi := &file_user_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideoaddResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideoaddResp) ProtoMessage() {}
+
+func (x *VideoaddResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideoaddResp.ProtoReflect.Descriptor instead.
+func (*VideoaddResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *VideoaddResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type VideoupdateReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Userid        int64                  `protobuf:"varint,2,opt,name=userid,proto3" json:"userid,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideoupdateReq) Reset() {
+	*x = VideoupdateReq{}
+	mi := &file_user_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideoupdateReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideoupdateReq) ProtoMessage() {}
+
+func (x *VideoupdateReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideoupdateReq.ProtoReflect.Descriptor instead.
+func (*VideoupdateReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *VideoupdateReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *VideoupdateReq) GetUserid() int64 {
+	if x != nil {
+		return x.Userid
+	}
+	return 0
+}
+
+type VideoupdateResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideoupdateResp) Reset() {
+	*x = VideoupdateResp{}
+	mi := &file_user_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideoupdateResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideoupdateResp) ProtoMessage() {}
+
+func (x *VideoupdateResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideoupdateResp.ProtoReflect.Descriptor instead.
+func (*VideoupdateResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *VideoupdateResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type VideodeleteReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Userid        int64                  `protobuf:"varint,2,opt,name=userid,proto3" json:"userid,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideodeleteReq) Reset() {
+	*x = VideodeleteReq{}
+	mi := &file_user_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideodeleteReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideodeleteReq) ProtoMessage() {}
+
+func (x *VideodeleteReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideodeleteReq.ProtoReflect.Descriptor instead.
+func (*VideodeleteReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *VideodeleteReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *VideodeleteReq) GetUserid() int64 {
+	if x != nil {
+		return x.Userid
+	}
+	return 0
+}
+
+type VideodeleteResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideodeleteResp) Reset() {
+	*x = VideodeleteResp{}
+	mi := &file_user_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideodeleteResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideodeleteResp) ProtoMessage() {}
+
+func (x *VideodeleteResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideodeleteResp.ProtoReflect.Descriptor instead.
+func (*VideodeleteResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *VideodeleteResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type VideolistReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          int64                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	Size          int64                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideolistReq) Reset() {
+	*x = VideolistReq{}
+	mi := &file_user_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideolistReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideolistReq) ProtoMessage() {}
+
+func (x *VideolistReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideolistReq.ProtoReflect.Descriptor instead.
+func (*VideolistReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *VideolistReq) GetPage() int64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *VideolistReq) GetSize() int64 {
+	if x != nil {
+		return x.Size
+	}
+	return 0
+}
+
+type Videolist struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	VideoUrl      string                 `protobuf:"bytes,3,opt,name=videoUrl,proto3" json:"videoUrl,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	ImageUrl      string                 `protobuf:"bytes,5,opt,name=imageUrl,proto3" json:"imageUrl,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Videolist) Reset() {
+	*x = Videolist{}
+	mi := &file_user_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Videolist) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Videolist) ProtoMessage() {}
+
+func (x *Videolist) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Videolist.ProtoReflect.Descriptor instead.
+func (*Videolist) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *Videolist) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *Videolist) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Videolist) GetVideoUrl() string {
+	if x != nil {
+		return x.VideoUrl
+	}
+	return ""
+}
+
+func (x *Videolist) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *Videolist) GetImageUrl() string {
+	if x != nil {
+		return x.ImageUrl
+	}
+	return ""
+}
+
+type VideolistResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	List          []*Videolist           `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VideolistResp) Reset() {
+	*x = VideolistResp{}
+	mi := &file_user_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VideolistResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VideolistResp) ProtoMessage() {}
+
+func (x *VideolistResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VideolistResp.ProtoReflect.Descriptor instead.
+func (*VideolistResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *VideolistResp) GetList() []*Videolist {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
 var File_user_proto protoreflect.FileDescriptor
 
 const file_user_proto_rawDesc = "" +
@@ -365,11 +849,44 @@ const file_user_proto_rawDesc = "" +
 	"\x02Id\x18\x01 \x01(\x03R\x02Id\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x14\n" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x12\x16\n" +
-	"\x06mobile\x18\x04 \x01(\tR\x06mobile2\x9c\x01\n" +
+	"\x06mobile\x18\x04 \x01(\tR\x06mobile\"\x87\x01\n" +
+	"\vVideoaddReq\x12\x16\n" +
+	"\x06userid\x18\x01 \x01(\x03R\x06userid\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
+	"\bvideoUrl\x18\x03 \x01(\tR\bvideoUrl\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x1a\n" +
+	"\bimageUrl\x18\x05 \x01(\tR\bimageUrl\"\x1e\n" +
+	"\fVideoaddResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"8\n" +
+	"\x0eVideoupdateReq\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\x12\x16\n" +
+	"\x06userid\x18\x02 \x01(\x03R\x06userid\"!\n" +
+	"\x0fVideoupdateResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"8\n" +
+	"\x0eVideodeleteReq\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\x12\x16\n" +
+	"\x06userid\x18\x02 \x01(\x03R\x06userid\"!\n" +
+	"\x0fVideodeleteResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"6\n" +
+	"\fVideolistReq\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x03R\x04page\x12\x12\n" +
+	"\x04size\x18\x02 \x01(\x03R\x04size\"\x85\x01\n" +
+	"\tVideolist\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
+	"\bvideoUrl\x18\x03 \x01(\tR\bvideoUrl\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x1a\n" +
+	"\bimageUrl\x18\x05 \x01(\tR\bimageUrl\"5\n" +
+	"\rVideolistResp\x12$\n" +
+	"\x04list\x18\x01 \x03(\v2\x10.proto.VideolistR\x04list2\x85\x03\n" +
 	"\x04User\x123\n" +
 	"\bRegister\x12\x12.proto.RegisterReq\x1a\x13.proto.RegisterResp\x12*\n" +
 	"\x05Login\x12\x0f.proto.LoginReq\x1a\x10.proto.LoginResp\x123\n" +
-	"\bUserShow\x12\x12.proto.UserShowReq\x1a\x13.proto.UserShowRespB\x03Z\x01/b\x06proto3"
+	"\bUserShow\x12\x12.proto.UserShowReq\x1a\x13.proto.UserShowResp\x123\n" +
+	"\bVideoadd\x12\x12.proto.VideoaddReq\x1a\x13.proto.VideoaddResp\x12<\n" +
+	"\vVideoupdate\x12\x15.proto.VideoupdateReq\x1a\x16.proto.VideoupdateResp\x12<\n" +
+	"\vVideodelete\x12\x15.proto.VideodeleteReq\x1a\x16.proto.VideodeleteResp\x126\n" +
+	"\tVideolist\x12\x13.proto.VideolistReq\x1a\x14.proto.VideolistRespB\x03Z\x01/b\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once
@@ -383,27 +900,45 @@ func file_user_proto_rawDescGZIP() []byte {
 	return file_user_proto_rawDescData
 }
 
-var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_user_proto_goTypes = []any{
-	(*RegisterReq)(nil),  // 0: proto.RegisterReq
-	(*RegisterResp)(nil), // 1: proto.RegisterResp
-	(*LoginReq)(nil),     // 2: proto.LoginReq
-	(*LoginResp)(nil),    // 3: proto.LoginResp
-	(*UserShowReq)(nil),  // 4: proto.UserShowReq
-	(*UserShowResp)(nil), // 5: proto.UserShowResp
+	(*RegisterReq)(nil),     // 0: proto.RegisterReq
+	(*RegisterResp)(nil),    // 1: proto.RegisterResp
+	(*LoginReq)(nil),        // 2: proto.LoginReq
+	(*LoginResp)(nil),       // 3: proto.LoginResp
+	(*UserShowReq)(nil),     // 4: proto.UserShowReq
+	(*UserShowResp)(nil),    // 5: proto.UserShowResp
+	(*VideoaddReq)(nil),     // 6: proto.VideoaddReq
+	(*VideoaddResp)(nil),    // 7: proto.VideoaddResp
+	(*VideoupdateReq)(nil),  // 8: proto.VideoupdateReq
+	(*VideoupdateResp)(nil), // 9: proto.VideoupdateResp
+	(*VideodeleteReq)(nil),  // 10: proto.VideodeleteReq
+	(*VideodeleteResp)(nil), // 11: proto.VideodeleteResp
+	(*VideolistReq)(nil),    // 12: proto.VideolistReq
+	(*Videolist)(nil),       // 13: proto.Videolist
+	(*VideolistResp)(nil),   // 14: proto.VideolistResp
 }
 var file_user_proto_depIdxs = []int32{
-	0, // 0: proto.User.Register:input_type -> proto.RegisterReq
-	2, // 1: proto.User.Login:input_type -> proto.LoginReq
-	4, // 2: proto.User.UserShow:input_type -> proto.UserShowReq
-	1, // 3: proto.User.Register:output_type -> proto.RegisterResp
-	3, // 4: proto.User.Login:output_type -> proto.LoginResp
-	5, // 5: proto.User.UserShow:output_type -> proto.UserShowResp
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	13, // 0: proto.VideolistResp.list:type_name -> proto.Videolist
+	0,  // 1: proto.User.Register:input_type -> proto.RegisterReq
+	2,  // 2: proto.User.Login:input_type -> proto.LoginReq
+	4,  // 3: proto.User.UserShow:input_type -> proto.UserShowReq
+	6,  // 4: proto.User.Videoadd:input_type -> proto.VideoaddReq
+	8,  // 5: proto.User.Videoupdate:input_type -> proto.VideoupdateReq
+	10, // 6: proto.User.Videodelete:input_type -> proto.VideodeleteReq
+	12, // 7: proto.User.Videolist:input_type -> proto.VideolistReq
+	1,  // 8: proto.User.Register:output_type -> proto.RegisterResp
+	3,  // 9: proto.User.Login:output_type -> proto.LoginResp
+	5,  // 10: proto.User.UserShow:output_type -> proto.UserShowResp
+	7,  // 11: proto.User.Videoadd:output_type -> proto.VideoaddResp
+	9,  // 12: proto.User.Videoupdate:output_type -> proto.VideoupdateResp
+	11, // 13: proto.User.Videodelete:output_type -> proto.VideodeleteResp
+	14, // 14: proto.User.Videolist:output_type -> proto.VideolistResp
+	8,  // [8:15] is the sub-list for method output_type
+	1,  // [1:8] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_user_proto_init() }
@@ -417,7 +952,7 @@ func file_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_proto_rawDesc), len(file_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

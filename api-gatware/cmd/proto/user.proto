@@ -33,9 +33,60 @@ message UserShowResp {
   string email    =3;
   string mobile   =4;
 }
+message VideoaddReq {
+  int64    userid  =1;
+  string   title   =2;
+  string   videoUrl=3;
+  string   info    =4;
+  string   imageUrl=5;
 
+}
+
+message VideoaddResp {
+  int64   Id      =1;
+
+}
+message VideoupdateReq {
+  int64   Id      =1;
+  int64    userid  =2;
+
+}
+
+message VideoupdateResp {
+  int64   Id      =1;
+
+}
+message VideodeleteReq {
+  int64   Id      =1;
+  int64    userid  =2;
+
+}
+
+message VideodeleteResp {
+  int64   Id      =1;
+}
+
+message VideolistReq {
+  int64   page  =1;
+  int64   size  =2;
+}
+
+message Videolist {
+  int64    userId  =1;
+  string   title   =2;
+  string   videoUrl=3;
+  string   info    =4;
+  string   imageUrl=5;
+}
+message VideolistResp {
+  repeated Videolist list=1;
+}
 service User {
   rpc Register(RegisterReq) returns (RegisterResp);   //注册接口
   rpc Login(LoginReq) returns (LoginResp);            //登录接口
   rpc UserShow(UserShowReq) returns (UserShowResp);   //详情接口
+  rpc Videoadd(VideoaddReq) returns (VideoaddResp);   //视频添加接口
+  rpc Videoupdate(VideoupdateReq) returns (VideoupdateResp);   //视频修改加接口
+  rpc Videodelete(VideodeleteReq) returns (VideodeleteResp);   //视频删除接口
+  rpc Videolist(VideolistReq) returns (VideolistResp);   //视频查看接口
 }
