@@ -26,6 +26,11 @@ const (
 	User_Videoupdate_FullMethodName = "/proto.User/Videoupdate"
 	User_Videodelete_FullMethodName = "/proto.User/Videodelete"
 	User_Videolist_FullMethodName   = "/proto.User/Videolist"
+	User_Shopadd_FullMethodName     = "/proto.User/Shopadd"
+	User_ShopUpdate_FullMethodName  = "/proto.User/ShopUpdate"
+	User_ShopShow_FullMethodName    = "/proto.User/ShopShow"
+	User_ShopDelete_FullMethodName  = "/proto.User/ShopDelete"
+	User_Shoplist_FullMethodName    = "/proto.User/Shoplist"
 )
 
 // UserClient is the client API for User service.
@@ -39,6 +44,11 @@ type UserClient interface {
 	Videoupdate(ctx context.Context, in *VideoupdateReq, opts ...grpc.CallOption) (*VideoupdateResp, error)
 	Videodelete(ctx context.Context, in *VideodeleteReq, opts ...grpc.CallOption) (*VideodeleteResp, error)
 	Videolist(ctx context.Context, in *VideolistReq, opts ...grpc.CallOption) (*VideolistResp, error)
+	Shopadd(ctx context.Context, in *ShopaddReq, opts ...grpc.CallOption) (*ShopaddResp, error)
+	ShopUpdate(ctx context.Context, in *ShopUpdateReq, opts ...grpc.CallOption) (*ShopUpdateResp, error)
+	ShopShow(ctx context.Context, in *ShopShowReq, opts ...grpc.CallOption) (*ShopShowResp, error)
+	ShopDelete(ctx context.Context, in *ShopDeleteReq, opts ...grpc.CallOption) (*ShopDeleteResp, error)
+	Shoplist(ctx context.Context, in *ShoplistReq, opts ...grpc.CallOption) (*ShoplistResp, error)
 }
 
 type userClient struct {
@@ -119,6 +129,56 @@ func (c *userClient) Videolist(ctx context.Context, in *VideolistReq, opts ...gr
 	return out, nil
 }
 
+func (c *userClient) Shopadd(ctx context.Context, in *ShopaddReq, opts ...grpc.CallOption) (*ShopaddResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShopaddResp)
+	err := c.cc.Invoke(ctx, User_Shopadd_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) ShopUpdate(ctx context.Context, in *ShopUpdateReq, opts ...grpc.CallOption) (*ShopUpdateResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShopUpdateResp)
+	err := c.cc.Invoke(ctx, User_ShopUpdate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) ShopShow(ctx context.Context, in *ShopShowReq, opts ...grpc.CallOption) (*ShopShowResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShopShowResp)
+	err := c.cc.Invoke(ctx, User_ShopShow_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) ShopDelete(ctx context.Context, in *ShopDeleteReq, opts ...grpc.CallOption) (*ShopDeleteResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShopDeleteResp)
+	err := c.cc.Invoke(ctx, User_ShopDelete_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userClient) Shoplist(ctx context.Context, in *ShoplistReq, opts ...grpc.CallOption) (*ShoplistResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShoplistResp)
+	err := c.cc.Invoke(ctx, User_Shoplist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServer is the server API for User service.
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility.
@@ -130,6 +190,11 @@ type UserServer interface {
 	Videoupdate(context.Context, *VideoupdateReq) (*VideoupdateResp, error)
 	Videodelete(context.Context, *VideodeleteReq) (*VideodeleteResp, error)
 	Videolist(context.Context, *VideolistReq) (*VideolistResp, error)
+	Shopadd(context.Context, *ShopaddReq) (*ShopaddResp, error)
+	ShopUpdate(context.Context, *ShopUpdateReq) (*ShopUpdateResp, error)
+	ShopShow(context.Context, *ShopShowReq) (*ShopShowResp, error)
+	ShopDelete(context.Context, *ShopDeleteReq) (*ShopDeleteResp, error)
+	Shoplist(context.Context, *ShoplistReq) (*ShoplistResp, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -160,6 +225,21 @@ func (UnimplementedUserServer) Videodelete(context.Context, *VideodeleteReq) (*V
 }
 func (UnimplementedUserServer) Videolist(context.Context, *VideolistReq) (*VideolistResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Videolist not implemented")
+}
+func (UnimplementedUserServer) Shopadd(context.Context, *ShopaddReq) (*ShopaddResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Shopadd not implemented")
+}
+func (UnimplementedUserServer) ShopUpdate(context.Context, *ShopUpdateReq) (*ShopUpdateResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShopUpdate not implemented")
+}
+func (UnimplementedUserServer) ShopShow(context.Context, *ShopShowReq) (*ShopShowResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShopShow not implemented")
+}
+func (UnimplementedUserServer) ShopDelete(context.Context, *ShopDeleteReq) (*ShopDeleteResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShopDelete not implemented")
+}
+func (UnimplementedUserServer) Shoplist(context.Context, *ShoplistReq) (*ShoplistResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Shoplist not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 func (UnimplementedUserServer) testEmbeddedByValue()              {}
@@ -308,6 +388,96 @@ func _User_Videolist_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_Shopadd_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShopaddReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Shopadd(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Shopadd_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Shopadd(ctx, req.(*ShopaddReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_ShopUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShopUpdateReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).ShopUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_ShopUpdate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).ShopUpdate(ctx, req.(*ShopUpdateReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_ShopShow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShopShowReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).ShopShow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_ShopShow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).ShopShow(ctx, req.(*ShopShowReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_ShopDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShopDeleteReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).ShopDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_ShopDelete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).ShopDelete(ctx, req.(*ShopDeleteReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _User_Shoplist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShoplistReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).Shoplist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_Shoplist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).Shoplist(ctx, req.(*ShoplistReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // User_ServiceDesc is the grpc.ServiceDesc for User service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -342,6 +512,26 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Videolist",
 			Handler:    _User_Videolist_Handler,
+		},
+		{
+			MethodName: "Shopadd",
+			Handler:    _User_Shopadd_Handler,
+		},
+		{
+			MethodName: "ShopUpdate",
+			Handler:    _User_ShopUpdate_Handler,
+		},
+		{
+			MethodName: "ShopShow",
+			Handler:    _User_ShopShow_Handler,
+		},
+		{
+			MethodName: "ShopDelete",
+			Handler:    _User_ShopDelete_Handler,
+		},
+		{
+			MethodName: "Shoplist",
+			Handler:    _User_Shoplist_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

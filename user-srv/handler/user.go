@@ -13,6 +13,7 @@ type Server struct {
 }
 
 // 注册接口
+
 func (s *Server) Register(_ context.Context, in *__.RegisterReq) (*__.RegisterResp, error) {
 	var u model.User
 	u.Mobile = in.Mobile
@@ -21,7 +22,7 @@ func (s *Server) Register(_ context.Context, in *__.RegisterReq) (*__.RegisterRe
 	if err := u.GetOnfile(globar.DB); err != nil {
 		return nil, errors.New("数据获取失败")
 	}
-	if err := globar.DB.Create(&u).Error; err != nil {
+	if err := u.Create(globar.DB).Error; err != nil {
 		return nil, errors.New("添加失败")
 	}
 	return &__.RegisterResp{
@@ -31,12 +32,11 @@ func (s *Server) Register(_ context.Context, in *__.RegisterReq) (*__.RegisterRe
 
 // 登录接口
 func (s *Server) Login(_ context.Context, in *__.LoginReq) (*__.LoginResp, error) {
+
 	var u model.User
 	u.Mobile = in.Mobile
-	u.Email = in.Email
-	u.Password = in.Password
 	if err := u.GetOnfile(globar.DB); err != nil {
-		return nil, errors.New("数据获取失败")
+		return nil, errors.New("获取失败")
 	}
 	if u.Password != in.Password {
 		return nil, errors.New("密码不一致")

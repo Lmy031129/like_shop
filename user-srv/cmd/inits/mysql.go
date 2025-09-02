@@ -24,7 +24,7 @@ func InitMysql() {
 			panic(err)
 		}
 	})
-	globar.DB.AutoMigrate(&model.User{}, &model.Video{})
+	globar.DB.AutoMigrate(&model.User{}, &model.Video{}, &model.Shop{})
 	sqlDB, err := globar.DB.DB()
 
 	// SetMaxIdleConns 设置空闲连接池中连接的最大数量。

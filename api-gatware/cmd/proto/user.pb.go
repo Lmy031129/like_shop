@@ -825,6 +825,682 @@ func (x *VideolistResp) GetList() []*Videolist {
 	return nil
 }
 
+type ShopaddReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	Price         float32                `protobuf:"fixed32,5,opt,name=price,proto3" json:"price,omitempty"`
+	ShopNum       int64                  `protobuf:"varint,6,opt,name=shopNum,proto3" json:"shopNum,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopaddReq) Reset() {
+	*x = ShopaddReq{}
+	mi := &file_user_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopaddReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopaddReq) ProtoMessage() {}
+
+func (x *ShopaddReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopaddReq.ProtoReflect.Descriptor instead.
+func (*ShopaddReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ShopaddReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShopaddReq) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ShopaddReq) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *ShopaddReq) GetPrice() float32 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *ShopaddReq) GetShopNum() int64 {
+	if x != nil {
+		return x.ShopNum
+	}
+	return 0
+}
+
+type ShopaddResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopaddResp) Reset() {
+	*x = ShopaddResp{}
+	mi := &file_user_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopaddResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopaddResp) ProtoMessage() {}
+
+func (x *ShopaddResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopaddResp.ProtoReflect.Descriptor instead.
+func (*ShopaddResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ShopaddResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopUpdateReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	Price         float32                `protobuf:"fixed32,5,opt,name=price,proto3" json:"price,omitempty"`
+	ShopNum       int64                  `protobuf:"varint,6,opt,name=shopNum,proto3" json:"shopNum,omitempty"`
+	Id            int64                  `protobuf:"varint,7,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopUpdateReq) Reset() {
+	*x = ShopUpdateReq{}
+	mi := &file_user_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopUpdateReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopUpdateReq) ProtoMessage() {}
+
+func (x *ShopUpdateReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopUpdateReq.ProtoReflect.Descriptor instead.
+func (*ShopUpdateReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ShopUpdateReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShopUpdateReq) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ShopUpdateReq) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *ShopUpdateReq) GetPrice() float32 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *ShopUpdateReq) GetShopNum() int64 {
+	if x != nil {
+		return x.ShopNum
+	}
+	return 0
+}
+
+func (x *ShopUpdateReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopUpdateResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopUpdateResp) Reset() {
+	*x = ShopUpdateResp{}
+	mi := &file_user_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopUpdateResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopUpdateResp) ProtoMessage() {}
+
+func (x *ShopUpdateResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopUpdateResp.ProtoReflect.Descriptor instead.
+func (*ShopUpdateResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ShopUpdateResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopDeleteReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Id            int64                  `protobuf:"varint,2,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopDeleteReq) Reset() {
+	*x = ShopDeleteReq{}
+	mi := &file_user_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopDeleteReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopDeleteReq) ProtoMessage() {}
+
+func (x *ShopDeleteReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopDeleteReq.ProtoReflect.Descriptor instead.
+func (*ShopDeleteReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *ShopDeleteReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShopDeleteReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopDeleteResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopDeleteResp) Reset() {
+	*x = ShopDeleteResp{}
+	mi := &file_user_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopDeleteResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopDeleteResp) ProtoMessage() {}
+
+func (x *ShopDeleteResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopDeleteResp.ProtoReflect.Descriptor instead.
+func (*ShopDeleteResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ShopDeleteResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopShowReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Id            int64                  `protobuf:"varint,2,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopShowReq) Reset() {
+	*x = ShopShowReq{}
+	mi := &file_user_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopShowReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopShowReq) ProtoMessage() {}
+
+func (x *ShopShowReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopShowReq.ProtoReflect.Descriptor instead.
+func (*ShopShowReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ShopShowReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShopShowReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShopShowResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	Price         float32                `protobuf:"fixed32,5,opt,name=price,proto3" json:"price,omitempty"`
+	ShopNum       int64                  `protobuf:"varint,6,opt,name=shopNum,proto3" json:"shopNum,omitempty"`
+	Id            int64                  `protobuf:"varint,7,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShopShowResp) Reset() {
+	*x = ShopShowResp{}
+	mi := &file_user_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShopShowResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShopShowResp) ProtoMessage() {}
+
+func (x *ShopShowResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShopShowResp.ProtoReflect.Descriptor instead.
+func (*ShopShowResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ShopShowResp) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShopShowResp) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ShopShowResp) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *ShopShowResp) GetPrice() float32 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *ShopShowResp) GetShopNum() int64 {
+	if x != nil {
+		return x.ShopNum
+	}
+	return 0
+}
+
+func (x *ShopShowResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShoplistReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Id            int64                  `protobuf:"varint,2,opt,name=Id,proto3" json:"Id,omitempty"`
+	Page          int64                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	Size          int64                  `protobuf:"varint,4,opt,name=size,proto3" json:"size,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShoplistReq) Reset() {
+	*x = ShoplistReq{}
+	mi := &file_user_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShoplistReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShoplistReq) ProtoMessage() {}
+
+func (x *ShoplistReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShoplistReq.ProtoReflect.Descriptor instead.
+func (*ShoplistReq) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ShoplistReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ShoplistReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ShoplistReq) GetPage() int64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ShoplistReq) GetSize() int64 {
+	if x != nil {
+		return x.Size
+	}
+	return 0
+}
+
+type Shoplist struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Info          string                 `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+	Price         float32                `protobuf:"fixed32,5,opt,name=price,proto3" json:"price,omitempty"`
+	ShopNum       int64                  `protobuf:"varint,6,opt,name=shopNum,proto3" json:"shopNum,omitempty"`
+	Id            int64                  `protobuf:"varint,7,opt,name=Id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Shoplist) Reset() {
+	*x = Shoplist{}
+	mi := &file_user_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Shoplist) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Shoplist) ProtoMessage() {}
+
+func (x *Shoplist) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Shoplist.ProtoReflect.Descriptor instead.
+func (*Shoplist) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *Shoplist) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *Shoplist) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Shoplist) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
+}
+
+func (x *Shoplist) GetPrice() float32 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *Shoplist) GetShopNum() int64 {
+	if x != nil {
+		return x.ShopNum
+	}
+	return 0
+}
+
+func (x *Shoplist) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ShoplistResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	List          []*Shoplist            `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShoplistResp) Reset() {
+	*x = ShoplistResp{}
+	mi := &file_user_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShoplistResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShoplistResp) ProtoMessage() {}
+
+func (x *ShoplistResp) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShoplistResp.ProtoReflect.Descriptor instead.
+func (*ShoplistResp) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ShoplistResp) GetList() []*Shoplist {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
 var File_user_proto protoreflect.FileDescriptor
 
 const file_user_proto_rawDesc = "" +
@@ -878,7 +1554,54 @@ const file_user_proto_rawDesc = "" +
 	"\x04info\x18\x04 \x01(\tR\x04info\x12\x1a\n" +
 	"\bimageUrl\x18\x05 \x01(\tR\bimageUrl\"5\n" +
 	"\rVideolistResp\x12$\n" +
-	"\x04list\x18\x01 \x03(\v2\x10.proto.VideolistR\x04list2\x85\x03\n" +
+	"\x04list\x18\x01 \x03(\v2\x10.proto.VideolistR\x04list\"~\n" +
+	"\n" +
+	"ShopaddReq\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x14\n" +
+	"\x05price\x18\x05 \x01(\x02R\x05price\x12\x18\n" +
+	"\ashopNum\x18\x06 \x01(\x03R\ashopNum\"\x1d\n" +
+	"\vShopaddResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"\x91\x01\n" +
+	"\rShopUpdateReq\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x14\n" +
+	"\x05price\x18\x05 \x01(\x02R\x05price\x12\x18\n" +
+	"\ashopNum\x18\x06 \x01(\x03R\ashopNum\x12\x0e\n" +
+	"\x02Id\x18\a \x01(\x03R\x02Id\" \n" +
+	"\x0eShopUpdateResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"7\n" +
+	"\rShopDeleteReq\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x0e\n" +
+	"\x02Id\x18\x02 \x01(\x03R\x02Id\" \n" +
+	"\x0eShopDeleteResp\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x03R\x02Id\"5\n" +
+	"\vShopShowReq\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x0e\n" +
+	"\x02Id\x18\x02 \x01(\x03R\x02Id\"\x90\x01\n" +
+	"\fShopShowResp\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x14\n" +
+	"\x05price\x18\x05 \x01(\x02R\x05price\x12\x18\n" +
+	"\ashopNum\x18\x06 \x01(\x03R\ashopNum\x12\x0e\n" +
+	"\x02Id\x18\a \x01(\x03R\x02Id\"]\n" +
+	"\vShoplistReq\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x0e\n" +
+	"\x02Id\x18\x02 \x01(\x03R\x02Id\x12\x12\n" +
+	"\x04page\x18\x03 \x01(\x03R\x04page\x12\x12\n" +
+	"\x04size\x18\x04 \x01(\x03R\x04size\"\x8c\x01\n" +
+	"\bShoplist\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04info\x18\x04 \x01(\tR\x04info\x12\x14\n" +
+	"\x05price\x18\x05 \x01(\x02R\x05price\x12\x18\n" +
+	"\ashopNum\x18\x06 \x01(\x03R\ashopNum\x12\x0e\n" +
+	"\x02Id\x18\a \x01(\x03R\x02Id\"3\n" +
+	"\fShoplistResp\x12#\n" +
+	"\x04list\x18\x01 \x03(\v2\x0f.proto.ShoplistR\x04list2\x97\x05\n" +
 	"\x04User\x123\n" +
 	"\bRegister\x12\x12.proto.RegisterReq\x1a\x13.proto.RegisterResp\x12*\n" +
 	"\x05Login\x12\x0f.proto.LoginReq\x1a\x10.proto.LoginResp\x123\n" +
@@ -886,7 +1609,14 @@ const file_user_proto_rawDesc = "" +
 	"\bVideoadd\x12\x12.proto.VideoaddReq\x1a\x13.proto.VideoaddResp\x12<\n" +
 	"\vVideoupdate\x12\x15.proto.VideoupdateReq\x1a\x16.proto.VideoupdateResp\x12<\n" +
 	"\vVideodelete\x12\x15.proto.VideodeleteReq\x1a\x16.proto.VideodeleteResp\x126\n" +
-	"\tVideolist\x12\x13.proto.VideolistReq\x1a\x14.proto.VideolistRespB\x03Z\x01/b\x06proto3"
+	"\tVideolist\x12\x13.proto.VideolistReq\x1a\x14.proto.VideolistResp\x120\n" +
+	"\aShopadd\x12\x11.proto.ShopaddReq\x1a\x12.proto.ShopaddResp\x129\n" +
+	"\n" +
+	"ShopUpdate\x12\x14.proto.ShopUpdateReq\x1a\x15.proto.ShopUpdateResp\x123\n" +
+	"\bShopShow\x12\x12.proto.ShopShowReq\x1a\x13.proto.ShopShowResp\x129\n" +
+	"\n" +
+	"ShopDelete\x12\x14.proto.ShopDeleteReq\x1a\x15.proto.ShopDeleteResp\x123\n" +
+	"\bShoplist\x12\x12.proto.ShoplistReq\x1a\x13.proto.ShoplistRespB\x03Z\x01/b\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once
@@ -900,7 +1630,7 @@ func file_user_proto_rawDescGZIP() []byte {
 	return file_user_proto_rawDescData
 }
 
-var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
 var file_user_proto_goTypes = []any{
 	(*RegisterReq)(nil),     // 0: proto.RegisterReq
 	(*RegisterResp)(nil),    // 1: proto.RegisterResp
@@ -917,28 +1647,50 @@ var file_user_proto_goTypes = []any{
 	(*VideolistReq)(nil),    // 12: proto.VideolistReq
 	(*Videolist)(nil),       // 13: proto.Videolist
 	(*VideolistResp)(nil),   // 14: proto.VideolistResp
+	(*ShopaddReq)(nil),      // 15: proto.ShopaddReq
+	(*ShopaddResp)(nil),     // 16: proto.ShopaddResp
+	(*ShopUpdateReq)(nil),   // 17: proto.ShopUpdateReq
+	(*ShopUpdateResp)(nil),  // 18: proto.ShopUpdateResp
+	(*ShopDeleteReq)(nil),   // 19: proto.ShopDeleteReq
+	(*ShopDeleteResp)(nil),  // 20: proto.ShopDeleteResp
+	(*ShopShowReq)(nil),     // 21: proto.ShopShowReq
+	(*ShopShowResp)(nil),    // 22: proto.ShopShowResp
+	(*ShoplistReq)(nil),     // 23: proto.ShoplistReq
+	(*Shoplist)(nil),        // 24: proto.Shoplist
+	(*ShoplistResp)(nil),    // 25: proto.ShoplistResp
 }
 var file_user_proto_depIdxs = []int32{
 	13, // 0: proto.VideolistResp.list:type_name -> proto.Videolist
-	0,  // 1: proto.User.Register:input_type -> proto.RegisterReq
-	2,  // 2: proto.User.Login:input_type -> proto.LoginReq
-	4,  // 3: proto.User.UserShow:input_type -> proto.UserShowReq
-	6,  // 4: proto.User.Videoadd:input_type -> proto.VideoaddReq
-	8,  // 5: proto.User.Videoupdate:input_type -> proto.VideoupdateReq
-	10, // 6: proto.User.Videodelete:input_type -> proto.VideodeleteReq
-	12, // 7: proto.User.Videolist:input_type -> proto.VideolistReq
-	1,  // 8: proto.User.Register:output_type -> proto.RegisterResp
-	3,  // 9: proto.User.Login:output_type -> proto.LoginResp
-	5,  // 10: proto.User.UserShow:output_type -> proto.UserShowResp
-	7,  // 11: proto.User.Videoadd:output_type -> proto.VideoaddResp
-	9,  // 12: proto.User.Videoupdate:output_type -> proto.VideoupdateResp
-	11, // 13: proto.User.Videodelete:output_type -> proto.VideodeleteResp
-	14, // 14: proto.User.Videolist:output_type -> proto.VideolistResp
-	8,  // [8:15] is the sub-list for method output_type
-	1,  // [1:8] is the sub-list for method input_type
-	1,  // [1:1] is the sub-list for extension type_name
-	1,  // [1:1] is the sub-list for extension extendee
-	0,  // [0:1] is the sub-list for field type_name
+	24, // 1: proto.ShoplistResp.list:type_name -> proto.Shoplist
+	0,  // 2: proto.User.Register:input_type -> proto.RegisterReq
+	2,  // 3: proto.User.Login:input_type -> proto.LoginReq
+	4,  // 4: proto.User.UserShow:input_type -> proto.UserShowReq
+	6,  // 5: proto.User.Videoadd:input_type -> proto.VideoaddReq
+	8,  // 6: proto.User.Videoupdate:input_type -> proto.VideoupdateReq
+	10, // 7: proto.User.Videodelete:input_type -> proto.VideodeleteReq
+	12, // 8: proto.User.Videolist:input_type -> proto.VideolistReq
+	15, // 9: proto.User.Shopadd:input_type -> proto.ShopaddReq
+	17, // 10: proto.User.ShopUpdate:input_type -> proto.ShopUpdateReq
+	21, // 11: proto.User.ShopShow:input_type -> proto.ShopShowReq
+	19, // 12: proto.User.ShopDelete:input_type -> proto.ShopDeleteReq
+	23, // 13: proto.User.Shoplist:input_type -> proto.ShoplistReq
+	1,  // 14: proto.User.Register:output_type -> proto.RegisterResp
+	3,  // 15: proto.User.Login:output_type -> proto.LoginResp
+	5,  // 16: proto.User.UserShow:output_type -> proto.UserShowResp
+	7,  // 17: proto.User.Videoadd:output_type -> proto.VideoaddResp
+	9,  // 18: proto.User.Videoupdate:output_type -> proto.VideoupdateResp
+	11, // 19: proto.User.Videodelete:output_type -> proto.VideodeleteResp
+	14, // 20: proto.User.Videolist:output_type -> proto.VideolistResp
+	16, // 21: proto.User.Shopadd:output_type -> proto.ShopaddResp
+	18, // 22: proto.User.ShopUpdate:output_type -> proto.ShopUpdateResp
+	22, // 23: proto.User.ShopShow:output_type -> proto.ShopShowResp
+	20, // 24: proto.User.ShopDelete:output_type -> proto.ShopDeleteResp
+	25, // 25: proto.User.Shoplist:output_type -> proto.ShoplistResp
+	14, // [14:26] is the sub-list for method output_type
+	2,  // [2:14] is the sub-list for method input_type
+	2,  // [2:2] is the sub-list for extension type_name
+	2,  // [2:2] is the sub-list for extension extendee
+	0,  // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_user_proto_init() }
@@ -952,7 +1704,7 @@ func file_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_proto_rawDesc), len(file_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   26,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

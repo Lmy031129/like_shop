@@ -24,6 +24,15 @@ func Router() *gin.Engine {
 		video.POST("videoupdate", api.Videoupdate)
 		video.POST("videodelete", api.VideoDelete)
 	}
+	shop := r.Group("/shop")
+	{
+		shop.Use(until.JWTAuth())
+		shop.POST("shopadd", api.Shopadd)
+		shop.POST("shopUpdate", api.ShopUpdate)
+		shop.POST("shopShow", api.ShopShow)
+		shop.POST("shopDelete", api.ShopDelete)
+		shop.GET("shoplist", api.Shoplist)
+	}
 
 	return r
 }
